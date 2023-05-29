@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Nav.css";
 
 function Nav() {
+  const [show, handleShow] = useState(false);
+
+  const changeNavBar = () => {
+    if (window.scrollY > 100) {
+      handleShow(true);
+    } else {
+      handleShow(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNavBar);
+    return () => window.removeEventListener("scroll", changeNavBar);
+  }, []);
+
   return (
-    <div className="nav">
+    <div className={`nav ${show && "nav_black"}`}>
       <div className="nav_contents">
         <img
           className="nav_logo"
-          src="https://variety.com/wp-content/uploads/2017/02/netflix-logo.jpg"
+          src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
           alt=""
         />
 
