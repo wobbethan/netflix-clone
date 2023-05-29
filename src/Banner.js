@@ -29,18 +29,20 @@ function Banner() {
     <header
       className="banner"
       style={{
-        backgroundImage: `url('https://wallpapercave.com/wp/wp1917118.jpg')`,
+        backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`,
         backgroundSize: "cover",
         backgroundPosition: "center center",
       }}
     >
       <div className="banner_contents">
-        <h1 className="banner_title">Movie Name</h1>
+        <h1 className="banner_title">
+          {movie?.title || movie?.name || movie?.original_name}
+        </h1>
         <div className="banner_buttons">
           <button className="banner_button">Play</button>
           <button className="banner_button">My List</button>
           <h1 className="banner_description">
-            {truncateDescript(`testtesttsttesttesttesttesttesttesttest`, 150)}
+            {truncateDescript(movie?.overview, 150)}
           </h1>
         </div>
       </div>
