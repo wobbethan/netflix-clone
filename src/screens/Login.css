@@ -12,7 +12,7 @@
   object-fit: contain;
   padding-left: 20px;
 }
-.login_button {
+.signin_button {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -45,6 +45,8 @@
   color: #fff;
   padding: 20px;
   text-align: center;
+  left: 0;
+  right: 0;
 }
 .login_body > h1 {
   font-size: 3.125rem;
@@ -75,4 +77,7 @@
   border: none;
   cursor: pointer;
   font-weight: 600;
+}
+.login_input {
+  margin: 20px;
 }
