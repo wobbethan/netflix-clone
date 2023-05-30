@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { auth } from "../firebase";
+import { auth } from "../firebaseConfig";
 import "./signup.css";
 
 function SignupScreen() {
@@ -13,9 +13,7 @@ function SignupScreen() {
         emailRef.current.value,
         passwordRef.current.value
       )
-      .then(() => {
-        console.log(authUser);
-      })
+      .then(() => {})
       .catch((error) => {
         alert(error.message);
       });
